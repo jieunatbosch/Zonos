@@ -2,7 +2,7 @@ name: Sync to Hugging Face Hub
 
 on:
   push:
-    branches: [master] # Or `master`, depending on your main branch name
+    branches: [main] # Or `master`, depending on your main branch name
   workflow_dispatch: # Allows manual trigger from GitHub Actions tab
 
 jobs:
@@ -20,6 +20,6 @@ jobs:
         run: |
           git config --global user.email "jik52@pitt.edu"
           git config --global user.name "jieunatbosch"
-          #git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos main
+          git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos main
           # Or if your GitHub branch is 'master' and you want to push to 'main' on HF:
-          git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos master:main
+          #git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos master:main
