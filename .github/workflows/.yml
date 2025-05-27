@@ -1,0 +1,25 @@
+name: Sync to Hugging Face Hub
+
+on:
+  push:
+    branches: [master] # Or `master`, depending on your main branch name
+  workflow_dispatch: # Allows manual trigger from GitHub Actions tab
+
+jobs:
+  sync-to-hub:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # Important for LFS
+          lfs: true # Enable LFS if you have large files
+
+      - name: Push to Hugging Face Space
+        env:
+          HF_TOKEN: ${{ secrets.HF_TOKEN }} # Reference the GitHub secret
+        run: |
+          git config --global user.email "jik52@pitt.edu"
+          git config --global user.name "jieunatbosch"
+          #git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos main
+          # Or if your GitHub branch is 'master' and you want to push to 'main' on HF:
+          git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos master:main
