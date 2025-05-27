@@ -20,6 +20,7 @@ jobs:
         run: |
           git config --global user.email "jik52@pitt.edu"
           git config --global user.name "jieunatbosch"
-          git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos main
+          #git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos main
+          git push https://Jenniai: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@huggingface.co/spaces/Jenniai/zonos main
           # Or if your GitHub branch is 'master' and you want to push to 'main' on HF:
           #git push https://Jenniai:$HF_TOKEN@huggingface.co/spaces/Jenniai/zonos master:main
